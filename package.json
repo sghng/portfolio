@@ -28,7 +28,7 @@
     "hexo-pangu": "^0.2.3",
     "hexo-related-posts": "^1.6.2",
     "hexo-renderer-markdown-it": "^7.1.1",
-    "hexo-renderer-pandoc": "^0.4.0",
+    "hexo-renderer-pandoc": "^0.5.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-tag-embed": "^1.0.0",
     "hexo-tag-github-code": "^0.1.0",
