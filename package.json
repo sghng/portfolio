@@ -37,7 +37,7 @@
     "markdown-it-task-lists": "^2.1.1"
   },
   "devDependencies": {
-    "cspell": "^8.17.3",
+    "cspell": "^9.0.1",
     "hexo-server": "^3.0.0",
     "markdownlint-cli2": "^0.18.1",
     "prettier": "^3.4.2",
