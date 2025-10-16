@@ -4,3 +4,4 @@ publish = "public"
 
 [build.environment]
 BUN_FLAGS = "--production"
+NODE_VERSION = "25"
