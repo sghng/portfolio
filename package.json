@@ -16,7 +16,7 @@
     "test": "bun run lint && bun run spellcheck && bun run format"
   },
   "dependencies": {
-    "hexo": "^7.3.0",
+    "hexo": "^8.1.0",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-fontawesome": "^2.4.0",
     "hexo-generator-alias": "^1.0.0",
