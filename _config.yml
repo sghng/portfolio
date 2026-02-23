@@ -118,6 +118,7 @@ alias:
   /wechat/: /images/wechat.jpg
   /biz4eng/: https://notes.sghuang.com/courses/integrated-engineering-and-business-fundamentals
   /note-taking/: /files/note-taking.pdf
+  /iit/: https://multi-agent.crc.nd.edu/presentation
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

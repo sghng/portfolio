@@ -5,3 +5,9 @@ publish = "public"
 [build.environment]
 BUN_FLAGS = "--production"
 NODE_VERSION = "25"
+
+[[redirects]]
+from = "/typ2docx/*"
+to = "typ2docx.render.com"
+force = true
+status = 200
