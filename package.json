@@ -16,7 +16,7 @@
     "test": "bun run lint && bun run spellcheck && bun run format"
   },
   "dependencies": {
-    "hexo": "^8.0.0",
+    "hexo": "^8.1.1",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-fontawesome": "^2.4.0",
     "hexo-generator-alias": "^1.0.0",
@@ -32,17 +32,17 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-tag-embed": "^1.0.0",
     "hexo-tag-github-code": "^0.1.0",
-    "hexo-theme-next": "^8.25.0",
-    "hexo-word-counter": "^0.2.1",
+    "hexo-theme-next": "^8.27.0",
+    "hexo-word-counter": "^0.2.2",
     "markdown-it-task-lists": "^2.1.1"
   },
   "devDependencies": {
-    "cspell": "^9.2.1",
+    "cspell": "^9.6.4",
     "hexo-server": "^3.0.0",
     "markdownlint-cli2": "^0.18.1",
-    "prettier": "^3.6.2",
+    "prettier": "^3.8.1",
     "prettier-plugin-jinja-template": "^2.1.0",
-    "prettier-plugin-packagejson": "^2.5.19",
+    "prettier-plugin-packagejson": "^2.5.22",
     "prettier-plugin-toml": "^2.0.6"
   },
   "packageManager": "bun@1.3.0",
