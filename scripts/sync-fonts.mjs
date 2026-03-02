@@ -92,6 +92,7 @@ async function main() {
 			"object",
 			"get",
 			`${bucket}/${key}`,
+			"--remote",
 			"--file",
 			localPath,
 		]);

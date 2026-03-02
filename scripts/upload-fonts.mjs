@@ -70,6 +70,7 @@ async function main() {
 			"object",
 			"put",
 			`${bucket}/${key}`,
+			"--remote",
 			"--file",
 			localPath,
 		]);
