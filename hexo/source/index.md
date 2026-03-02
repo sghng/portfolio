@@ -5,6 +5,12 @@ toc:
   enable: false
 ---
 
+<div class="archive-home">
+  This is an archived version of my portfolio. Some information may be out of date — a new site is on the way!
+  <br>
+  There are quite some foolish stuff in here, but I'm not gonna remove them — having a reference is fun :)
+</div>
+
 I'm a Full-Stack Software Engineer, Project Manager, and an Entrepreneur. I'm
 also a Tenor, Piano Player, and a Productivity Enthusiast. My experience spans
 integrated circuits, software engineering, tech consulting, and startup
