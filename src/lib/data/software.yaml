@@ -1,0 +1,5 @@
+- name: "mirt: Multidimensional Item Response Theory"
+  language: R
+  homepage: https://cran.r-project.org/web/packages/mirt/
+  source: https://github.com/philchalmers/mirt/
+  role: contributor
