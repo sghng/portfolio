@@ -1,0 +1,12 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": [],
+	"categories": {},
+	"rules": {},
+	"settings": {},
+	"env": {
+		"builtin": true
+	},
+	"globals": {},
+	"ignorePatterns": [".svelte-kit", "build", "node_modules"]
+}

@@ -1,0 +1,1 @@
+- Use `bun` for JS runtime. Also prefer `bunx`
