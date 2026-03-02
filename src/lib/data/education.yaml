@@ -1,0 +1,33 @@
+- degree: Master of Science
+  field: Computer Science and Engineering
+  institution: University of Notre Dame
+  institution_url: https://nd.edu
+  location: South Bend, IN
+  start: "2023-08"
+  end: "2025-05"
+  gpa: "3.722/4.000"
+  highlights:
+    - Tenor 1 at Notre Dame Chorale
+    - Interim Chair of ACM Student Chapter
+
+- degree: Bachelor of Engineering
+  field: Microelectronics Science and Engineering
+  institution: Southern University of Science and Technology (SUSTech)
+  institution_url: https://sustech.edu.cn
+  location: Shenzhen, China
+  start: "2019-09"
+  end: "2023-06"
+  gpa: "3.69/4.00"
+  highlights:
+    - Zhiren College
+
+- degree: Exchange Student
+  institution: University of Notre Dame
+  institution_url: https://nd.edu
+  location: South Bend, IN
+  start: "2022-01"
+  end: "2022-07"
+  gpa: "3.833/4.000"
+  highlights:
+    - Lived in Keenan Hall
+    - Worked with Dr. Douglas Thain at the Cooperative Computing Lab (CCL)
