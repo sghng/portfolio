@@ -13,4 +13,4 @@ _multiconfig.yml
 # Node environment
 node_modules/
 package-lock.json
-bun.lockb
+bun.lock
