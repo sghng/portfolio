@@ -23,9 +23,9 @@ async function fileExists(filePath) {
 
 const WRANGLER_BIN = process.env.WRANGLER_BIN?.trim() || "wrangler";
 
-async function runWrangler(args) {
+async function runProcess(command, args) {
 	return new Promise((resolve, reject) => {
-		const proc = spawn(WRANGLER_BIN, args, {
+		const proc = spawn(command, args, {
 			stdio: ["ignore", "pipe", "pipe"],
 			env: process.env,
 		});
@@ -49,6 +49,17 @@ async function runWrangler(args) {
 			resolve({ code: code ?? 1, stdout, stderr });
 		});
 	});
+}
+
+async function runWrangler(args) {
+	try {
+		return await runProcess(WRANGLER_BIN, args);
+	} catch (error) {
+		if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+			return runProcess("bunx", ["wrangler", ...args]);
+		}
+		throw error;
+	}
 }
 
 async function main() {
