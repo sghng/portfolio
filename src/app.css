@@ -1,1 +1,180 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * MonoLisa 2.015
+ * This font is subject to a EULA. A user-licence can be acquired at:
+ *   https://www.monolisa.dev/license
+ */
+@font-face {
+	src: url("/fonts/0-normal.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0020-007F;
+}
+@font-face {
+	src: url("/fonts/1-italic.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+	unicode-range: U+0020-007F;
+}
+@font-face {
+	src: url("/fonts/2-normal.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0080-00FF;
+}
+@font-face {
+	src: url("/fonts/3-italic.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+	unicode-range: U+0080-00FF;
+}
+@font-face {
+	src: url("/fonts/4-normal.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+2000-206F;
+}
+@font-face {
+	src: url("/fonts/5-italic.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+	unicode-range: U+2000-206F;
+}
+@font-face {
+	src: url("/fonts/6-normal.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+2070-209F;
+}
+@font-face {
+	src: url("/fonts/7-italic.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+	unicode-range: U+2070-209F;
+}
+@font-face {
+	src: url("/fonts/8-normal.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+3000-303F;
+}
+@font-face {
+	src: url("/fonts/9-italic.woff2") format("woff2");
+	font-family: "MonoLisa";
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+	unicode-range: U+3000-303F;
+}
+
+/*
+ * Color system — based on design doc §3
+ * Indigo blue primary (#177CB0), adapted for shadcn-svelte oklch tokens.
+ */
+:root {
+	--radius: 0.625rem;
+	--background: oklch(1 0 0);
+	--foreground: oklch(0.128 0.027 261.6);
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.128 0.027 261.6);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.128 0.027 261.6);
+	--primary: oklch(0.512 0.137 250.7);
+	--primary-foreground: oklch(1 0 0);
+	--secondary: oklch(0.968 0.003 264.5);
+	--secondary-foreground: oklch(0.128 0.027 261.6);
+	--muted: oklch(0.968 0.003 264.5);
+	--muted-foreground: oklch(0.55 0.023 264.4);
+	--accent: oklch(0.968 0.003 264.5);
+	--accent-foreground: oklch(0.128 0.027 261.6);
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: oklch(0.928 0.006 264.5);
+	--input: oklch(0.928 0.006 264.5);
+	--ring: oklch(0.512 0.137 250.7);
+}
+
+.dark {
+	--background: oklch(0.128 0.027 261.6);
+	--foreground: oklch(0.984 0.002 247.8);
+	--card: oklch(0.17 0.03 260);
+	--card-foreground: oklch(0.984 0.002 247.8);
+	--popover: oklch(0.17 0.03 260);
+	--popover-foreground: oklch(0.984 0.002 247.8);
+	--primary: oklch(0.646 0.153 249.2);
+	--primary-foreground: oklch(1 0 0);
+	--secondary: oklch(0.279 0.03 256.8);
+	--secondary-foreground: oklch(0.984 0.002 247.8);
+	--muted: oklch(0.279 0.03 256.8);
+	--muted-foreground: oklch(0.65 0.02 260);
+	--accent: oklch(0.279 0.03 256.8);
+	--accent-foreground: oklch(0.984 0.002 247.8);
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: oklch(0.279 0.03 256.8);
+	--input: oklch(0.32 0.03 256.8);
+	--ring: oklch(0.646 0.153 249.2);
+}
+
+/*
+ * Tailwind theme inline — maps CSS vars to Tailwind utilities
+ */
+@theme inline {
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--font-sans:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--font-mono:
+		"MonoLisa", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	--font-heading:
+		"MonoLisa", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}
