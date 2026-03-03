@@ -8,6 +8,8 @@ export interface SocialLink {
 
 export interface Profile {
 	name: string;
+	name_cn?: string;
+	name_pinyin?: string;
 	title: string;
 	bio: string;
 	links: SocialLink[];

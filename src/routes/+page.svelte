@@ -1,4 +1,6 @@
 <script lang="ts">
+import Intro from "$lib/components/Intro.svelte";
+
 let { data } = $props();
 </script>
 
@@ -9,19 +11,7 @@ let { data } = $props();
 
 <main class="mx-auto max-w-3xl px-6 py-12 space-y-16">
 	<!-- ── Profile / Hero ─────────────────────────────────────────────── -->
-	<header class="space-y-4">
-		<h1 class="font-heading text-3xl font-bold tracking-tight">{data.profile.name}</h1>
-		<p class="text-muted-foreground">{data.profile.title}</p>
-		<p class="text-sm leading-relaxed">{data.profile.bio}</p>
-
-		<div class="flex flex-wrap gap-4 text-sm">
-			{#each data.profile.links as link}
-				<a href={link.url} class="text-primary underline underline-offset-4 hover:text-primary/80">
-					{link.label}
-				</a>
-			{/each}
-		</div>
-	</header>
+	<Intro profile={data.profile} />
 
 	<!-- ── News ────────────────────────────────────────────────────────── -->
 	{#if data.news.length > 0}
