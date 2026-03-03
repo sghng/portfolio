@@ -672,7 +672,7 @@
 	--color-input: var(--input);
 	--color-ring: var(--ring);
 	--font-sans:
-		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+		"MonoLisa", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 	--font-mono:
 		"MonoLisa", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 	--font-heading:
