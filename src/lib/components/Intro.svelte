@@ -18,11 +18,17 @@ const iconMap: Record<string, Component> = {
 	<div class="flex justify-center items-end gap-6">
 		<h1 class="font-heading text-3xl font-light tracking-tight italic" style="font-feature-settings: 'ss02' 1">{profile.name}</h1>
 		{#if profile.name_cn}
-			<div class="flex flex-col items-center leading-tight font-wenkai">
-				{#if profile.name_pinyin}
-					<span class="text-xs text-muted-foreground tracking-wide">{profile.name_pinyin}</span>
-				{/if}
-				<span class="text-3xl font-light">{profile.name_cn}</span>
+			{@const chars = profile.name_cn.split('')}
+			{@const syllables = profile.name_pinyin?.split(' ') ?? []}
+			<div class="flex items-end gap-[0.35em] font-wenkai">
+				{#each chars as char, i}
+					<div class="flex flex-col items-center w-[1em] text-3xl overflow-visible">
+						{#if syllables[i]}
+							<span class="text-xs text-muted-foreground leading-snug whitespace-nowrap">{syllables[i]}</span>
+						{/if}
+						<span class="font-light leading-none">{char}</span>
+					</div>
+				{/each}
 			</div>
 		{/if}
 	</div>
