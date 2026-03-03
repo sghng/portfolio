@@ -1,17 +1,20 @@
 <script lang="ts">
-import Github from "@lucide/svelte/icons/github";
-import Linkedin from "@lucide/svelte/icons/linkedin";
-import Twitter from "@lucide/svelte/icons/twitter";
+import * as icons from "@lucide/svelte";
 import type { Component } from "svelte";
 import type { Profile } from "$lib/types";
 
 let { profile }: { profile: Profile } = $props();
 
-const iconMap: Record<string, Component> = {
-	github: Github,
-	twitter: Twitter,
-	linkedin: Linkedin,
-};
+function toPascalCase(name: string): string {
+	return name
+		.split("-")
+		.map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+		.join("");
+}
+
+function getIcon(name: string): Component | undefined {
+	return (icons as Record<string, Component>)[toPascalCase(name)];
+}
 </script>
 
 <header class="space-y-4">
@@ -32,14 +35,22 @@ const iconMap: Record<string, Component> = {
 			</div>
 		{/if}
 	</div>
+	<div class="text-muted-foreground text-center text-sm space-y-0.5">
+		{#if profile.lab}
+			<p>{profile.lab}</p>
+		{/if}
+		{#if profile.school}
+			<p>{profile.school}</p>
+		{/if}
+	</div>
 	<p class="text-muted-foreground text-center">{profile.title}</p>
 	<p class="text-sm leading-relaxed">{profile.bio}</p>
 
 	<div class="flex justify-center gap-4">
 		{#each profile.links as link}
-			{@const Icon = iconMap[link.icon ?? ""]}
+			{@const Icon = getIcon(link.icon)}
 			{#if Icon}
-				<a href={link.url} aria-label={link.label} class="text-muted-foreground hover:text-foreground transition-colors">
+				<a href={link.url} aria-label={link.icon} class="text-muted-foreground hover:text-foreground transition-colors">
 					<Icon size={20} />
 				</a>
 			{/if}

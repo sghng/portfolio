@@ -1,17 +1,17 @@
 name: Samuel Huang
 name_cn: 黄冠超
 name_pinyin: Huáng Guàn Chāo
-title: University of Notre Dame
+lab: Statistical Learning and Behavioral Modeling Lab
+school: University of Notre Dame
 bio: >
   Quantitative Psychology researcher with a focus on psychometrics, education,
   and AI, who happens to be a fan of hacking and classical music.
 links:
-  - label: GitHub
-    url: https://github.com/sghng
+  - url: https://github.com/sghng
     icon: github
-  - label: X
-    url: https://x.com/SamuelGHuang
+  - url: https://x.com/SamuelGHuang
     icon: twitter
-  - label: LinkedIn
-    url: https://linkedin.com/in/sghng
+  - url: https://linkedin.com/in/sghng
     icon: linkedin
+  - url: mailto:ghuang3@nd.edu
+    icon: mail

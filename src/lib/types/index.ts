@@ -1,9 +1,9 @@
 // ── Profile ──────────────────────────────────────────────────────────────────
 
 export interface SocialLink {
-	label: string;
+	label?: string;
 	url: string;
-	icon?: string;
+	icon: string;
 }
 
 export interface Profile {
@@ -11,6 +11,8 @@ export interface Profile {
 	name_cn?: string;
 	name_pinyin?: string;
 	title: string;
+	lab?: string;
+	school?: string;
 	bio: string;
 	links: SocialLink[];
 }
