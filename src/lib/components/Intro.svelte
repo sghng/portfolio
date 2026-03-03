@@ -1,5 +1,6 @@
 <script lang="ts">
 import * as icons from "@lucide/svelte";
+import * as si from "simple-icons";
 import type { Component } from "svelte";
 import type { Profile } from "$lib/types";
 
@@ -12,8 +13,13 @@ function toPascalCase(name: string): string {
 		.join("");
 }
 
-function getIcon(name: string): Component | undefined {
-	return (icons as Record<string, Component>)[toPascalCase(name)];
+function getLucideIcon(name: string): Component | undefined {
+	return (icons as unknown as Record<string, Component>)[toPascalCase(name)];
+}
+
+function getSimpleIcon(name: string): string | undefined {
+	const key = "si" + toPascalCase(name);
+	return (si as unknown as Record<string, { path: string }>)[key]?.path;
 }
 </script>
 
@@ -48,10 +54,17 @@ function getIcon(name: string): Component | undefined {
 
 	<div class="flex justify-center gap-4">
 		{#each profile.links as link}
-			{@const Icon = getIcon(link.icon)}
+			{@const Icon = getLucideIcon(link.icon)}
+			{@const siPath = !Icon ? getSimpleIcon(link.icon) : undefined}
 			{#if Icon}
 				<a href={link.url} aria-label={link.icon} class="text-muted-foreground hover:text-foreground transition-colors">
 					<Icon size={20} />
+				</a>
+			{:else if siPath}
+				<a href={link.url} aria-label={link.icon} class="text-muted-foreground hover:text-foreground transition-colors">
+					<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+						<path d={siPath} />
+					</svg>
 				</a>
 			{/if}
 		{/each}
