@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Github, Heart } from "@lucide/svelte";
+import { ExternalLink, Github, Heart } from "@lucide/svelte";
 import * as si from "simple-icons";
 import Intro from "$lib/components/Intro.svelte";
 import Section from "$lib/components/Section.svelte";
@@ -83,11 +83,18 @@ function cranPkgName(url: string): string | undefined {
 		<Section title="Presentations & Talks">
 			<ul class="space-y-3 text-sm">
 				{#each data.presentations as pres}
-					<li>
-						<strong>{pres.title}</strong>
-						<br />
-						<span class="text-muted-foreground">{pres.event} &middot; {pres.date}</span>
-					</li>
+<li>
+				<strong>{pres.title}</strong>
+				{#if pres.link}
+					<a href={pres.link} class="text-muted-foreground hover:text-foreground inline-block">
+						<ExternalLink class="size-3.5" />
+					</a>
+				{/if}
+				<div class="flex items-baseline justify-between gap-4">
+					<span class="text-muted-foreground">{pres.event}{#if pres.place}&nbsp;· {pres.place}{/if}</span>
+					<span class="text-muted-foreground font-mono shrink-0">{new Date(pres.date).toISOString().split('T')[0]}</span>
+				</div>
+				</li>
 				{/each}
 			</ul>
 		</Section>

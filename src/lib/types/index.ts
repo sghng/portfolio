@@ -44,6 +44,8 @@ export interface Presentation {
 	event: string;
 	date: string;
 	type: string;
+	place?: string;
+	link?: string;
 }
 
 // ── Software ─────────────────────────────────────────────────────────────────
