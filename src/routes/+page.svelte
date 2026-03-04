@@ -1,4 +1,5 @@
 <script lang="ts">
+import { Github, Heart } from "@lucide/svelte";
 import * as si from "simple-icons";
 import Intro from "$lib/components/Intro.svelte";
 import Section from "$lib/components/Section.svelte";
@@ -214,7 +215,18 @@ function cranPkgName(url: string): string | undefined {
 	</Section>
 
 	<!-- ── Footer ──────────────────────────────────────────────────────── -->
-	<footer class="border-t pt-8 text-center text-xs text-muted-foreground">
-		<p>&copy; {new Date().getFullYear()} {data.profile.name} &middot; Built with SvelteKit</p>
+	<footer class="border-t pt-8 text-center text-xs text-muted-foreground space-y-1">
+		<p>&copy; {new Date().getFullYear()} {data.profile.name}</p>
+		<p>Built with <a href="https://svelte.dev/docs/kit" class="underline underline-offset-4 hover:text-foreground">SvelteKit</a>,{" "}<a href="https://ui.shadcn.com" class="underline underline-offset-4 hover:text-foreground">shadcn/ui</a>,{" "}and <Heart class="inline size-3 align-middle" /></p>
+		<p class="flex items-center justify-center gap-1.5">
+			Hosted on
+			<a href="https://pages.cloudflare.com" aria-label="Cloudflare Pages" class="hover:text-foreground">
+				<svg viewBox="0 0 24 24" fill="currentColor" class="size-4"><path d={si.siCloudflare.path} /></svg>
+			</a>
+			&middot; Source on
+			<a href="https://github.com/sghng/portfolio" aria-label="GitHub" class="hover:text-foreground">
+				<Github class="size-3.5" />
+			</a>
+		</p>
 	</footer>
 </main>
