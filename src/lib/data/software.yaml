@@ -1,5 +1,9 @@
+- name: irtdesign
+  language: R
+  source: https://github.com/slbm-lab/irtdesign/
+  role: [author, maintainer]
 - name: "mirt: Multidimensional Item Response Theory"
   language: R
   homepage: https://cran.r-project.org/web/packages/mirt/
   source: https://github.com/philchalmers/mirt/
-  role: contributor
+  role: [contributor]

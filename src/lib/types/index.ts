@@ -53,7 +53,7 @@ export interface Software {
 	language: string;
 	homepage?: string;
 	source?: string;
-	role?: string;
+	role?: string[];
 }
 
 // ── Education ────────────────────────────────────────────────────────────────

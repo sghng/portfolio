@@ -1,7 +1,20 @@
 <script lang="ts">
+import * as si from "simple-icons";
 import Intro from "$lib/components/Intro.svelte";
 
 let { data } = $props();
+
+/** Map a language name to a simple-icons SVG path */
+function langIconPath(lang: string): string | undefined {
+	const key = "si" + lang.charAt(0).toUpperCase() + lang.slice(1).toLowerCase();
+	return (si as unknown as Record<string, { path: string }>)[key]?.path;
+}
+
+/** Extract the CRAN package name from a CRAN homepage URL */
+function cranPkgName(url: string): string | undefined {
+	const m = url.match(/cran\.r-project\.org\/web\/packages\/([^/]+)/);
+	return m?.[1];
+}
 </script>
 
 <svelte:head>
@@ -78,11 +91,19 @@ let { data } = $props();
 			<h2 class="font-heading text-xl font-semibold mb-4">Software</h2>
 			<ul class="space-y-3 text-sm">
 				{#each data.software as pkg}
+					{@const iconPath = langIconPath(pkg.language)}
+					{@const cran = pkg.homepage ? cranPkgName(pkg.homepage) : undefined}
 					<li>
 						<strong class="font-mono">{pkg.name}</strong>
-						<span class="ml-2 text-muted-foreground">({pkg.language})</span>
-						{#if pkg.role}
-							<span class="ml-1 text-xs text-muted-foreground">&mdash; {pkg.role}</span>
+						{#if iconPath}
+							<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-label={pkg.language} class="ml-1.5 inline-block align-text-bottom text-muted-foreground">
+								<path d={iconPath} />
+							</svg>
+						{:else}
+							<span class="ml-2 text-muted-foreground">({pkg.language})</span>
+						{/if}
+						{#if pkg.role && pkg.role.length > 0}
+							<span class="ml-2 inline-block px-1.5 py-0.5 text-xs font-mono rounded bg-muted text-muted-foreground">{pkg.role.join(" | ")}</span>
 						{/if}
 						<br />
 						{#if pkg.homepage}
@@ -90,6 +111,11 @@ let { data } = $props();
 						{/if}
 						{#if pkg.source}
 							<a href={pkg.source} class="ml-2 text-primary underline text-xs">Source</a>
+						{/if}
+						{#if cran}
+							<a href={pkg.homepage} class="ml-2 inline-block align-text-bottom">
+								<img src="https://cranlogs.r-pkg.org/badges/{cran}" alt="CRAN downloads for {cran}" class="inline h-4" />
+							</a>
 						{/if}
 					</li>
 				{/each}
