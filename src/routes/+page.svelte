@@ -45,23 +45,32 @@ function cranPkgName(url: string): string | undefined {
 	<!-- ── Publications ────────────────────────────────────────────────── -->
 	{#if data.publications.length > 0}
 		<Section title="Publications">
-			<ul class="space-y-4 text-sm">
+			<ul class="space-y-4 text-sm text-center">
 				{#each data.publications as pub}
 					<li>
-						<span class="inline-block px-1.5 py-0.5 text-xs font-mono rounded bg-muted text-muted-foreground mr-2">
+						<strong>{pub.title}</strong>
+						<span class="inline-block px-1.5 py-0.5 font-mono rounded bg-muted text-muted-foreground ml-2">
 							{pub.type}
 						</span>
-						<strong>{pub.title}</strong>
 						<br />
-						<span class="text-muted-foreground">{pub.authors.join(", ")}</span>
+						<span>
+							{#each pub.authors as author, i}
+								{#if author === data.profile.name}
+									<span class="font-heading italic" style="font-feature-settings: 'ss02' 1">{author}</span>
+								{:else}
+									<span class="text-muted-foreground">{author}</span>
+								{/if}{#if i < pub.authors.length - 1}
+									<span class="text-muted-foreground">,&nbsp;</span>{/if}
+							{/each}
+						</span>
 						<br />
 						{#if pub.journal}
-							<span class="text-muted-foreground italic">{pub.journal}, {pub.year}</span>
+							<span class="italic">{pub.journal}</span><span class="text-muted-foreground italic">, {pub.year}</span>
 						{:else}
 							<span class="text-muted-foreground italic">{pub.year}</span>
 						{/if}
 						{#if pub.status}
-							<span class="ml-2 text-xs text-muted-foreground">({pub.status})</span>
+							<span class="ml-2 text-muted-foreground">({pub.status})</span>
 						{/if}
 					</li>
 				{/each}
