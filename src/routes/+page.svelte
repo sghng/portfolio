@@ -1,6 +1,7 @@
 <script lang="ts">
 import * as si from "simple-icons";
 import Intro from "$lib/components/Intro.svelte";
+import Section from "$lib/components/Section.svelte";
 
 let { data } = $props();
 
@@ -28,8 +29,7 @@ function cranPkgName(url: string): string | undefined {
 
 	<!-- ── News ────────────────────────────────────────────────────────── -->
 	{#if data.news.length > 0}
-		<section>
-			<h2 class="font-heading text-xl font-semibold mb-4">News</h2>
+		<Section title="News">
 			<ul class="space-y-2 text-sm">
 				{#each data.news as item}
 					<li>
@@ -38,13 +38,12 @@ function cranPkgName(url: string): string | undefined {
 					</li>
 				{/each}
 			</ul>
-		</section>
+		</Section>
 	{/if}
 
 	<!-- ── Publications ────────────────────────────────────────────────── -->
 	{#if data.publications.length > 0}
-		<section>
-			<h2 class="font-heading text-xl font-semibold mb-4">Publications</h2>
+		<Section title="Publications">
 			<ul class="space-y-4 text-sm">
 				{#each data.publications as pub}
 					<li>
@@ -66,13 +65,12 @@ function cranPkgName(url: string): string | undefined {
 					</li>
 				{/each}
 			</ul>
-		</section>
+		</Section>
 	{/if}
 
 	<!-- ── Presentations ───────────────────────────────────────────────── -->
 	{#if data.presentations.length > 0}
-		<section>
-			<h2 class="font-heading text-xl font-semibold mb-4">Presentations & Talks</h2>
+		<Section title="Presentations & Talks">
 			<ul class="space-y-3 text-sm">
 				{#each data.presentations as pres}
 					<li>
@@ -82,13 +80,12 @@ function cranPkgName(url: string): string | undefined {
 					</li>
 				{/each}
 			</ul>
-		</section>
+		</Section>
 	{/if}
 
 	<!-- ── Software ────────────────────────────────────────────────────── -->
 	{#if data.software.length > 0}
-		<section>
-			<h2 class="font-heading text-xl font-semibold mb-4">Software</h2>
+		<Section title="Software">
 			<ul class="space-y-3 text-sm">
 				{#each data.software as pkg}
 					{@const iconPath = langIconPath(pkg.language)}
@@ -120,12 +117,11 @@ function cranPkgName(url: string): string | undefined {
 					</li>
 				{/each}
 			</ul>
-		</section>
+		</Section>
 	{/if}
 
 	<!-- ── Education ───────────────────────────────────────────────────── -->
-	<section>
-		<h2 class="font-heading text-xl font-semibold mb-4">Education</h2>
+	<Section title="Education">
 		<ul class="space-y-6 text-sm">
 			{#each data.education as edu}
 				<li>
@@ -156,12 +152,11 @@ function cranPkgName(url: string): string | undefined {
 				</li>
 			{/each}
 		</ul>
-	</section>
+	</Section>
 
 	<!-- ── Teaching ────────────────────────────────────────────────────── -->
 	{#if data.teaching.length > 0}
-		<section>
-			<h2 class="font-heading text-xl font-semibold mb-4">Teaching</h2>
+		<Section title="Teaching">
 			<ul class="space-y-2 text-sm">
 				{#each data.teaching as t}
 					<li>
@@ -172,12 +167,11 @@ function cranPkgName(url: string): string | undefined {
 					</li>
 				{/each}
 			</ul>
-		</section>
+		</Section>
 	{/if}
 
 	<!-- ── Experience ──────────────────────────────────────────────────── -->
-	<section>
-		<h2 class="font-heading text-xl font-semibold mb-4">Experience</h2>
+	<Section title="Experience">
 		<ul class="space-y-6 text-sm">
 			{#each data.experience as exp}
 				<li>
@@ -203,11 +197,10 @@ function cranPkgName(url: string): string | undefined {
 				</li>
 			{/each}
 		</ul>
-	</section>
+	</Section>
 
 	<!-- ── Service ─────────────────────────────────────────────────────── -->
-	<section>
-		<h2 class="font-heading text-xl font-semibold mb-4">Service & Organizations</h2>
+	<Section title="Service & Organizations">
 		<ul class="space-y-2 text-sm">
 			{#each data.service as s}
 				<li>
@@ -218,7 +211,7 @@ function cranPkgName(url: string): string | undefined {
 				</li>
 			{/each}
 		</ul>
-	</section>
+	</Section>
 
 	<!-- ── Footer ──────────────────────────────────────────────────────── -->
 	<footer class="border-t pt-8 text-center text-xs text-muted-foreground">
