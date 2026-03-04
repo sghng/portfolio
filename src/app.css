@@ -690,4 +690,7 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	strong {
+		@apply font-normal not-italic;
+	}
 }

@@ -49,7 +49,7 @@ function getSimpleIcon(name: string): string | undefined {
 			<p>{profile.school}</p>
 		{/if}
 	</div>
-	<p class="text-muted-foreground text-center">{profile.title}</p>
+	<p class="text-muted-foreground text-center text-sm">{profile.title}</p>
 	<p class="text-sm leading-relaxed">{profile.bio}</p>
 
 	<div class="flex justify-center gap-4">

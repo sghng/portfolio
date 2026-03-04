@@ -5,6 +5,6 @@ let { title, children }: { title: string; children: Snippet } = $props();
 </script>
 
 <section>
-	<h2 class="font-heading text-xl font-semibold mb-4 text-center">{title}</h2>
+	<h2 class="font-heading text-xl font-medium mb-4 text-center">{title}</h2>
 	{@render children()}
 </section>
