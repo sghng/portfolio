@@ -42,6 +42,46 @@ function cranPkgName(url: string): string | undefined {
 		</Section>
 	{/if}
 
+	<!-- ── Education ───────────────────────────────────────────────────── -->
+	<Section title="Education">
+		<ul class="space-y-6 text-sm">
+			{#each data.education as edu}
+				<li>
+					<div class="flex items-baseline justify-between gap-4">
+					<strong>
+						{#if edu.field}
+							{edu.degree} <span class="text-muted-foreground">in</span>{#if edu.field.includes('Science and Engineering')}<br class="hidden sm:block" />{:else}{" "}{/if}{edu.field}
+						{:else}
+							{edu.degree}
+						{/if}
+					</strong>
+						<span class="text-muted-foreground font-mono text-xs shrink-0">{edu.start} &ndash; {edu.end}</span>
+					</div>
+					<div class="text-muted-foreground">
+						{#if edu.institution_url}
+							<a href={edu.institution_url} class="underline underline-offset-4">{edu.institution}</a>
+						{:else}
+							{edu.institution}
+						{/if}
+						{#if edu.location}
+							&middot; {edu.location}
+						{/if}
+					</div>
+					{#if edu.gpa}
+						<div class="text-muted-foreground">GPA: {edu.gpa}</div>
+					{/if}
+					{#if edu.highlights && edu.highlights.length > 0}
+						<ul class="mt-1 list-disc list-inside text-muted-foreground">
+							{#each edu.highlights as h}
+								<li>{h}</li>
+							{/each}
+						</ul>
+					{/if}
+				</li>
+			{/each}
+		</ul>
+	</Section>
+
 	<!-- ── Publications ────────────────────────────────────────────────── -->
 	{#if data.publications.length > 0}
 		<Section title="Publications">
@@ -136,40 +176,6 @@ function cranPkgName(url: string): string | undefined {
 			</ul>
 		</Section>
 	{/if}
-
-	<!-- ── Education ───────────────────────────────────────────────────── -->
-	<Section title="Education">
-		<ul class="space-y-6 text-sm">
-			{#each data.education as edu}
-				<li>
-					<div class="flex items-baseline justify-between gap-4">
-						<strong>{edu.degree}{edu.field ? ` in ${edu.field}` : ""}</strong>
-						<span class="text-muted-foreground font-mono text-xs shrink-0">{edu.start} &ndash; {edu.end}</span>
-					</div>
-					<div class="text-muted-foreground">
-						{#if edu.institution_url}
-							<a href={edu.institution_url} class="underline underline-offset-4">{edu.institution}</a>
-						{:else}
-							{edu.institution}
-						{/if}
-						{#if edu.location}
-							&middot; {edu.location}
-						{/if}
-					</div>
-					{#if edu.gpa}
-						<div class="text-muted-foreground">GPA: {edu.gpa}</div>
-					{/if}
-					{#if edu.highlights && edu.highlights.length > 0}
-						<ul class="mt-1 list-disc list-inside text-muted-foreground">
-							{#each edu.highlights as h}
-								<li>{h}</li>
-							{/each}
-						</ul>
-					{/if}
-				</li>
-			{/each}
-		</ul>
-	</Section>
 
 	<!-- ── Teaching ────────────────────────────────────────────────────── -->
 	{#if data.teaching.length > 0}
