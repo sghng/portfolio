@@ -92,7 +92,7 @@ $effect(() => {
 	}
 
 	.iykyk-text {
-		font-family: 'Virgil', 'Caveat', cursive;
+		font-family: 'Excalifont', cursive;
 		font-size: 1.25rem;
 		font-weight: 400;
 		color: var(--muted-foreground);

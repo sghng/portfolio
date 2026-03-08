@@ -58,10 +58,10 @@
 	unicode-range: U+0080-00FF;
 }
 
-/* Virgil font from Excalidraw */
+/* Excalifont subset for annotation */
 @font-face {
-	src: url("https://excalidraw.com/Virgil.woff2") format("woff2");
-	font-family: "Virgil";
+	src: url("/fonts/Excalifont-subset.woff2") format("woff2");
+	font-family: "Excalifont";
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
