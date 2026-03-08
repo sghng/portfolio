@@ -24,14 +24,14 @@ function getSimpleIcon(name: string): string | undefined {
 </script>
 
 <header class="space-y-4">
-	<div class="flex justify-center items-end gap-6">
-		<h1 class="font-heading text-3xl font-light tracking-tight italic" style="font-feature-settings: 'ss02' 1">{profile.name}</h1>
+	<div class="flex justify-center items-end gap-4 sm:gap-6 px-4">
+		<h1 class="font-heading text-2xl sm:text-3xl font-light tracking-tight italic text-right" style="font-feature-settings: 'ss02' 1">{profile.name}</h1>
 		{#if profile.name_cn}
 			{@const chars = profile.name_cn.split('')}
 			{@const syllables = profile.name_pinyin?.split(' ') ?? []}
-			<div class="flex items-end gap-[0.35em] font-wenkai">
+			<div class="flex items-end gap-[0.35em] font-wenkai shrink-0">
 				{#each chars as char, i}
-					<div class="flex flex-col items-center w-[1em] text-3xl overflow-visible">
+					<div class="flex flex-col items-center w-[1em] text-2xl sm:text-3xl overflow-visible">
 						{#if syllables[i]}
 							<span class="text-xs text-muted-foreground leading-snug whitespace-nowrap">{syllables[i]}</span>
 						{/if}
