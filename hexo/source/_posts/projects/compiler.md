@@ -8,10 +8,8 @@ permalink: compiler/
 
 ## Background
 
-{% fa_css %}
-
 The source code of this project can be found on
-[{% fa_inline github fab %} GitHub](https://github.com/sghuang19/ghuang3-compiler).
+[GitHub](https://github.com/sghuang19/ghuang3-compiler).
 
 This course project for CSE 40243
 [_Compilers and Language Design_](https://dthain.github.io/compilers-fa23/),
@@ -19,8 +17,8 @@ offered in Fall 2023 at the University of Notre Dame, was taught by Prof.
 Douglas Thain. I also had the privilege of working with Dr. Thain during the
 summer of 2022.
 
-As a side "note", the notes I took for this course can be found [{% fa_inline
-pen fas %} here](https://notes.sghuang.com/compilers-and-language-design).
+As a side "note", the notes I took for this course can be found
+[here](https://notes.sghuang.com/compilers-and-language-design).
 
 <!-- more -->
 

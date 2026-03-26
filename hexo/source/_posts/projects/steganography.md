@@ -12,10 +12,8 @@ images with Hamming Code error correction. I chose this topic because I was
 fascinated by the video made by 3Blue1Brown explaining Hamming Code, and I have
 a strong interest in bit operations.
 
-{% fa_css %}
-
 You can learn more about this project by reading the comprehensive
-[{% fa_inline file %} project report](https://github.com/sghuang19/dip-project-stegano/blob/main/README.md).
+[project report](https://github.com/sghuang19/dip-project-stegano/blob/main/README.md).
 
 ## Challenges Encountered
 

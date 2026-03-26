@@ -51,10 +51,8 @@ The problems are:
 - If `Full (strict)` mode (instead of `Full`) is set for SSL/TLS encryption on
   Cloudflare, certificate errors will prevent users from accessing the website.
 
-{% fa_css %}
-
 The solution is inspired by
-[{% fa_inline reddit fab %} a comment on Reddit](https://reddit.com/r/CloudFlare/comments/11tin1m/comment/jclftsa/).
+[a comment on Reddit](https://reddit.com/r/CloudFlare/comments/11tin1m/comment/jclftsa/).
 The problem is caused by Cloudflare's proxy settings:
 
 - GitHub Pages needs time to create certificates for the newly created site,
