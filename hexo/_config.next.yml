@@ -312,8 +312,7 @@ follow_me:
 # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
 related_posts:
   # can't be overridden by secondary config in dev, moved to _config.yml
-  enable: true
-  icon: fa fa-signs-post
+  enable: false
 
 # Post edit
 # Easily browse and edit blog source code online.
