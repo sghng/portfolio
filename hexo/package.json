@@ -18,7 +18,6 @@
   "dependencies": {
     "hexo": "^8.1.1",
     "hexo-filter-nofollow": "^2.0.2",
-    "hexo-fontawesome": "^2.4.0",
     "hexo-generator-alias": "^1.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
