@@ -1,1 +1,2 @@
 - Use `bun` for JS runtime. Also prefer `bunx`
+- The `hexo/` directory is a deprecated legacy site. Do not update, build, or touch it.

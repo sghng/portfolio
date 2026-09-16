@@ -2,7 +2,7 @@
  * Typed re-exports of YAML data files.
  *
  * Each YAML file is imported via vite-plugin-yaml (resolved at build time),
- * then cast to the corresponding TypeScript type from $lib/types.
+ * then cast to the corresponding TypeScript type from #lib/types.
  */
 
 import type {
@@ -15,17 +15,17 @@ import type {
 	Service,
 	Software,
 	Teaching,
-} from "$lib/types";
+} from "#lib/types";
 
-import profileData from "$lib/data/profile.yaml";
-import educationData from "$lib/data/education.yaml";
-import experienceData from "$lib/data/experience.yaml";
-import serviceData from "$lib/data/service.yaml";
-import newsData from "$lib/data/news.yaml";
-import publicationsData from "$lib/data/publications.yaml";
-import presentationsData from "$lib/data/presentations.yaml";
-import softwareData from "$lib/data/software.yaml";
-import teachingData from "$lib/data/teaching.yaml";
+import profileData from "#lib/data/profile.yaml";
+import educationData from "#lib/data/education.yaml";
+import experienceData from "#lib/data/experience.yaml";
+import serviceData from "#lib/data/service.yaml";
+import newsData from "#lib/data/news.yaml";
+import publicationsData from "#lib/data/publications.yaml";
+import presentationsData from "#lib/data/presentations.yaml";
+import softwareData from "#lib/data/software.yaml";
+import teachingData from "#lib/data/teaching.yaml";
 
 export const profile = profileData as unknown as Profile;
 export const education = educationData as unknown as Education[];

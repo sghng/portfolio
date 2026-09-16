@@ -16,7 +16,7 @@
     "test": "bun run lint && bun run spellcheck && bun run format"
   },
   "dependencies": {
-    "hexo": "^8.1.1",
+    "hexo": "^8.1.2",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-alias": "^1.0.0",
     "hexo-generator-archive": "^2.0.0",
@@ -24,27 +24,27 @@
     "hexo-generator-index": "^4.0.0",
     "hexo-generator-searchdb": "^1.5.0",
     "hexo-generator-tag": "^2.0.0",
-    "hexo-pangu": "^0.4.1",
+    "hexo-pangu": "^0.6.0",
     "hexo-renderer-markdown-it": "^7.1.1",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-tag-embed": "^1.0.0",
     "hexo-tag-github-code": "^0.1.0",
-    "hexo-theme-next": "^8.27.0",
+    "hexo-theme-next": "^8.29.0",
     "hexo-word-counter": "^0.2.2",
     "markdown-it-task-lists": "^2.1.1"
   },
   "devDependencies": {
-    "cspell": "^9.7.0",
+    "cspell": "^10.3.3",
     "hexo-server": "^3.0.0",
-    "markdownlint-cli2": "^0.21.0",
-    "prettier": "^3.8.1",
-    "prettier-plugin-jinja-template": "^2.1.0",
-    "prettier-plugin-packagejson": "^3.0.1",
+    "markdownlint-cli2": "^0.23.2",
+    "prettier": "^3.9.7",
+    "prettier-plugin-jinja-template": "^2.2.0",
+    "prettier-plugin-packagejson": "^3.0.2",
     "prettier-plugin-toml": "^2.0.6"
   },
   "packageManager": "bun@1.3.0",
   "hexo": {
-    "version": "8.1.1"
+    "version": "8.1.2"
   },
   "trustedDependencies": [
     "hexo-word-counter"

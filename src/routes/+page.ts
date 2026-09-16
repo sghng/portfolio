@@ -8,7 +8,7 @@ import {
 	presentations,
 	software,
 	teaching,
-} from "$lib/data";
+} from "#lib/data";
 
 export const load = () => ({
 	profile,

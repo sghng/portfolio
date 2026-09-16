@@ -1,9 +1,9 @@
 <script lang="ts">
-import { ExternalLink, Github, Heart } from "@lucide/svelte";
+import { ExternalLink, Heart } from "@lucide/svelte";
 import * as si from "simple-icons";
-import GithubContribs from "$lib/components/GithubContribs.svelte";
-import Intro from "$lib/components/Intro.svelte";
-import Section from "$lib/components/Section.svelte";
+import GithubContribs from "#lib/components/GithubContribs.svelte";
+import Intro from "#lib/components/Intro.svelte";
+import Section from "#lib/components/Section.svelte";
 
 let { data } = $props();
 
@@ -255,7 +255,7 @@ function cranPkgName(url: string): string | undefined {
 			</a>
 			&middot; Source on
 			<a href="https://github.com/sghng/portfolio" aria-label="GitHub" class="hover:text-foreground">
-				<Github class="size-3.5" />
+				<svg viewBox="0 0 24 24" fill="currentColor" class="size-3.5"><path d={si.siGithub.path} /></svg>
 			</a>
 		</p>
 	</footer>

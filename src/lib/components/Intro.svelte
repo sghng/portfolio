@@ -2,7 +2,7 @@
 import * as icons from "@lucide/svelte";
 import * as si from "simple-icons";
 import type { Component } from "svelte";
-import type { Profile } from "$lib/types";
+import type { Profile } from "#lib/types";
 
 let { profile }: { profile: Profile } = $props();
 
