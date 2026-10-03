@@ -1,2 +1,3 @@
 - Use `bun` for JS runtime. Also prefer `bunx`
 - The `hexo/` directory is a deprecated legacy site. Do not update, build, or touch it.
+- Deploy: the Cloudflare Pages project `portfolio` (serving `sgh.ng`) is connected to this repo's `main` branch and builds on push (build command `bun run build`, output `build/`). Fonts (MonoLisa, WenKai, Excalifont) are subset at build time by the `vite-plugin-*-subset.ts` plugins and fetched from `https://bucket.sgh.ng`, so no local font installation is needed.

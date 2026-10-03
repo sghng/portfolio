@@ -4,12 +4,14 @@ import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import { excalifontSubset } from "./vite-plugin-excalifont-subset.ts";
+import { monolisaSubset } from "./vite-plugin-monolisa-subset.ts";
 import { wenkaiSubset } from "./vite-plugin-wenkai-subset.ts";
 
 export default defineConfig({
 	plugins: [
 		wenkaiSubset(),
 		excalifontSubset(),
+		monolisaSubset(),
 		tailwindcss(),
 		yaml(),
 		// SvelteKit 3: configuration moved from svelte.config.js into the plugin,

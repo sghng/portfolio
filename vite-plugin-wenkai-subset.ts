@@ -31,6 +31,23 @@ interface GithubRelease {
 	assets: GithubAsset[];
 }
 
+/** Fetch with retries — CI builders share egress IPs that can hit transient 5xx/429s */
+async function fetchWithRetry(
+	url: string,
+	init?: RequestInit,
+	retries = 3,
+): Promise<Response> {
+	for (let attempt = 1; ; attempt++) {
+		const res = await fetch(url, init);
+		if (res.ok || attempt === retries) return res;
+		if (res.status < 500 && res.status !== 429) return res;
+		console.warn(
+			`[wenkai-subset] fetch got ${res.status}, retrying (${attempt}/${retries - 1})…`,
+		);
+		await new Promise((r) => setTimeout(r, 1000 * 2 ** (attempt - 1)));
+	}
+}
+
 function getCharacters(): string {
 	const profile = loadYaml(readFileSync(PROFILE_YAML, "utf8")) as Profile;
 	const parts: string[] = [];
@@ -41,7 +58,7 @@ function getCharacters(): string {
 
 async function fetchLatestTtf(): Promise<Buffer> {
 	// Fetch latest release metadata
-	const metaRes = await fetch(GITHUB_LATEST_API, {
+	const metaRes = await fetchWithRetry(GITHUB_LATEST_API, {
 		headers: { Accept: "application/vnd.github+json" },
 	});
 	if (!metaRes.ok) {
@@ -66,7 +83,7 @@ async function fetchLatestTtf(): Promise<Buffer> {
 	}
 
 	console.log(`[wenkai-subset] downloading ${FONT_ASSET_NAME} (${tag})…`);
-	const fontRes = await fetch(asset.browser_download_url);
+	const fontRes = await fetchWithRetry(asset.browser_download_url);
 	if (!fontRes.ok) {
 		throw new Error(`Font download error ${fontRes.status}`);
 	}
