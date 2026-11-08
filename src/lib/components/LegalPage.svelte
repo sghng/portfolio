@@ -1,15 +1,21 @@
 <script lang="ts">
 import { ExternalLink } from "@lucide/svelte";
 
-let { title, subtitle, children } = $props<{
+let {
+	title,
+	pageTitle = `${title} — sghng`,
+	subtitle,
+	children,
+} = $props<{
 	title: string;
+	pageTitle?: string;
 	subtitle: string;
 	children: import("svelte").Snippet;
 }>();
 </script>
 
 <svelte:head>
-	<title>{title} — Google App</title>
+	<title>{pageTitle}</title>
 	<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
 	<meta name="googlebot" content="noindex, nofollow" />
 </svelte:head>

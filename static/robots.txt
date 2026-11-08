@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /google-app
 Disallow: /google-app-privacy-policy
 Disallow: /google-app-terms-of-service
 

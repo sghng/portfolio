@@ -2,7 +2,7 @@
 import LegalPage from "#lib/components/LegalPage.svelte";
 </script>
 
-<LegalPage title="Terms of Service" subtitle="For the Google OAuth application">
+<LegalPage title="Terms of Service" subtitle="For the sghng Google OAuth application">
 	<p>
 		<strong>This app is just for the developer himself.</strong> If you are not the developer himself, do not
 		install this app.
