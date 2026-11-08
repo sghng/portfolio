@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ExternalLink, Heart } from "@lucide/svelte";
 import * as si from "simple-icons";
-import GithubContribs from "#lib/components/GithubContribs.svelte";
+// import GithubContribs from "#lib/components/GithubContribs.svelte"; // heatmap disabled
 import Intro from "#lib/components/Intro.svelte";
 import Section from "#lib/components/Section.svelte";
 
@@ -144,13 +144,12 @@ function cranPkgName(url: string): string | undefined {
 	<!-- ── Software ────────────────────────────────────────────────────── -->
 	{#if data.software.length > 0}
 		<Section title="Software">
-			{#if true}
-				{@const githubLink = data.profile.links.find(l => l.icon === 'github')}
-				{@const githubUsername = githubLink?.url.split('/').pop()}
-				{#if githubUsername}
-					<GithubContribs username={githubUsername} />
-				{/if}
-			{/if}
+			<!-- GitHub contribution heatmap temporarily disabled -->
+			<!-- {@const githubLink = data.profile.links.find(l => l.icon === 'github')} -->
+			<!-- {@const githubUsername = githubLink?.url.split('/').pop()} -->
+			<!-- {#if githubUsername} -->
+			<!-- 	<GithubContribs username={githubUsername} /> -->
+			<!-- {/if} -->
 			<ul class="space-y-3 text-sm">
 				{#each data.software as pkg}
 					{@const iconPath = langIconPath(pkg.language)}

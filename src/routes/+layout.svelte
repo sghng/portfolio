@@ -6,7 +6,8 @@ let { children } = $props();
 </script>
 
 <svelte:head>
-	<script src="/gh-contribs.js"></script>
+	<!-- GitHub contribution script temporarily disabled (heatmap off) -->
+	<!-- <script src="/gh-contribs.js"></script> -->
 </svelte:head>
 
 <ModeWatcher />
